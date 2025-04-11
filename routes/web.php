@@ -31,8 +31,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
 Route::get('/restaurants', [RestaurantController::class, 'index'])->name('restaurants.index');
 Route::get('/restaurants/{restaurant}', [RestaurantController::class, 'show'])->name('restaurants.show');
+
 Route::get('/orders', [OrderController::class, 'store'])->name('orders.store');
 Route::post('/order/add-to-cart/{menuItem}', [OrderController::class, 'addToCart'])->name('order.addToCart');
 Route::get('/order/store/{restaurantId}', [OrderController::class, 'store'])->name('order.store'); // Xem giỏ hàng
