@@ -6,7 +6,7 @@ import RestaurantPage from '../pages/RestaurantPage';
 function AppRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<RestaurantPage/>} />
+      <Route path="/restaurants" element={<RestaurantPage/>} />
       {/* <Route path="/restaurant/:id" element={<RestaurantDetailPage />} /> */}
     </Routes>
   );

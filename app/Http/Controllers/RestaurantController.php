@@ -8,19 +8,6 @@ use Illuminate\Support\Facades\Cache;
 
 class RestaurantController extends Controller
 {
-    public function index(Request $request)
-    {
-        $page = $request->query('page', 1);
-        $cacheKey = "restaurants_page_{$page}";
-
-        // Cache dữ liệu phân trang trong 60 giây
-        $restaurants = Cache::remember($cacheKey, 60, function () use ($page) {
-            return Restaurant::paginate(10, ['*'], 'page', $page);
-        });
-
-        return response()->json($restaurants);
-    }
-
     public function apiIndex(Request $request)
     {
         try {
